@@ -12,12 +12,19 @@ questions_list=list(questions_and_options.keys())
 #deal with each key separately 
 for i in range(len(questions_list)):
     #print the question by accessing the key from the dictionary
-    print(f'Question {i+1}: {questions_list[i]}\n')
+    print(f'\nQuestion {i+1}: {questions_list[i]}')
     #access the corresponding options for that question and add them to a list
     options_list=questions_and_options[questions_list[i]]
     #acces the list woith the correct options and print member at a time
     for i in range(len(options_list[:len(options_list)-1])):
-         print()
+         print(options_list[i])
+    #ask user for input and check it 
+    user_answer=input("Your answer: ").lower()
+    if user_answer==options_list[len(options_list)-1]:
+         print('Correct!')
+    else:
+         print("Incorrect")
+         
 
 # print(list(questions_dict.keys())[0])
 
