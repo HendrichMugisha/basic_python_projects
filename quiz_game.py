@@ -29,10 +29,6 @@ for i in range(len(questions_list)):
 # print(list(questions_dict.keys())[0])
 
 
-
-
-
-
 # users_answer=input('Question 1: What is the capital city of france?\na) Paris\nb) London\nc)Rome\nYour answer: ')
 
 # if users_answer== 'Paris':
