@@ -21,5 +21,35 @@ while True:
         break
 
 #time to use the secret number
-print(f'Secret number: {secret_number}')          
+print(f'Secret number: {secret_number}')
+print("I have generated a 4-digit number with unique digits. Try to guess it!")
+
+while True:
+    user_guess = input("Guess: ")
+    #cows means the digit is present but in the wrong position // bulls means it is present in right position
+
+    secret_number_list =list(secret_number)
+    user_guess_list = list(user_guess)
+    if len(user_guess_list) == len(secret_number_list):
+        bulls=0
+        cows=0
+        #couting bulls
+        for i in range(len(secret_number_list)):
+            if secret_number_list[i] == user_guess_list[i]: #if the item and position is the same in both lists
+                bulls+=1
+            if user_guess_list[i] in secret_number_list: #if an item from the user_list simply exists in the secret list
+                cows+=1
+        if bulls==len(secret_number_list):
+            print(f"You Guessed it! Its {secret_number} ")
+            break
+        else:
+            if (bulls == 1) and (cows-bulls == 1):
+                print(f"{cows-bulls} Cow, {bulls} Bull")
+            elif bulls==1:
+                print(f"{cows-bulls} Cows, {bulls} Bull")
+            elif cows == 1:
+                print(f"{cows-bulls} Cow, {bulls} Bulls")
+            else:
+                print(f"{cows-bulls} Cows, {bulls} Bulls")
+    
 
