@@ -79,6 +79,8 @@ while count > 0:
     else:
         print("Wrong guess")
         count-=1
-        print(f"\nYou have {count} remaining attempts! ")
-
+        if count > 0:
+            print(f"\nYou have {count} remaining attempts! ")
+        else:
+            print(f"You failed! The word is {secret_word}")
 
